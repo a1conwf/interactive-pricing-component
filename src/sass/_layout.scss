@@ -1,0 +1,19 @@
+@import "./mixins";
+
+//Container
+.container {
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+@include sm {
+	.container {
+		max-width: 327px;
+	}
+}
+
+@include md {
+	.container {
+		max-width: 540px;
+	}
+}

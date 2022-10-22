@@ -1,0 +1,304 @@
+@import "../../sass/layout";
+@import "../../sass/components";
+@import "../../sass/mixins";
+
+//Pricing
+.pricing {
+	position: relative;
+	bottom: 88px;
+	z-index: 9999;
+
+	//Pricing inner
+	&__inner {
+		text-align: center;
+		border-radius: 8px;
+		box-shadow: 0px 5px 10px 5px rgba(127, 137, 185, 0.152073);
+		background-color: white;
+	}
+
+	&__top {
+		border-bottom: 1px solid #ecf0fb;
+	}
+
+	//Views, pricing bottom
+	.views,
+	&__bottom {
+		margin: 0 auto;
+	}
+
+	//Views
+	.views {
+		display: grid;
+		max-width: 279px;
+		padding: 34px 0 38px;
+
+		//Pageviews num
+		&__num {
+			margin-bottom: 25px;
+			text-transform: uppercase;
+			letter-spacing: 1.71px;
+			color: #848ead;
+		}
+
+		//Slider
+		.slider {
+			width: 100%;
+			height: 8px;
+			margin-bottom: 24px;
+			appearance: none;
+			background: #ecf0fb;
+			background-image: linear-gradient(#a4f3eb, #a4f3eb);
+			background-repeat: no-repeat;
+			border-radius: 5px;
+			outline: none;
+
+			//Slider thumb
+			&::-webkit-slider-thumb {
+				width: 40px;
+				height: 40px;
+				appearance: none;
+				border-radius: 50%;
+				background: url("../../assets/svg/icon-slider.svg") no-repeat center;
+				background-color: #10d8c4;
+				box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+
+				&:active {
+					background-color: #24aea1;
+				}
+			}
+		}
+
+		//Views pricing
+		&__pricing {
+			@include flexCenter;
+			gap: 10px;
+
+			//Price
+			&-price {
+				font-size: 3.2rem;
+				font-weight: 800;
+				line-height: 4.4rem;
+				letter-spacing: -0.8px;
+				color: #293356;
+			}
+
+			//Period
+			&-period {
+				font-size: 1.4rem;
+				line-height: 1.9rem;
+			}
+		}
+	}
+
+	//Billing
+	.billing {
+		padding-bottom: 38px;
+		@include flexCenter;
+
+		//Switch
+		.switch {
+			position: relative;
+			display: inline-block;
+			min-width: 43px;
+			height: 22px;
+			margin: 0 12px;
+
+			//Input
+			&__input {
+				opacity: 0;
+				width: 0;
+				height: 0;
+			}
+
+			//Slider
+			&__slider {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: #cfd8ef;
+				transition: 0.3s;
+				border-radius: 15px;
+				cursor: pointer;
+
+				//Before
+				&::before {
+					position: absolute;
+					content: "";
+					height: 14px;
+					width: 14px;
+					left: 4px;
+					bottom: 4px;
+					background-color: white;
+					transition: 0.3s;
+					border-radius: 50%;
+				}
+			}
+		}
+
+		.switch__input:checked + .switch__slider {
+			background-color: #7aeadf;
+		}
+
+		.switch__input:checked + .switch__slider::before {
+			transform: translateX(20px);
+		}
+
+		//Billing yearly
+		&__yearly {
+			margin-right: 5.5px;
+		}
+
+		//Billing discount
+		&__discount {
+			padding: 3px 0;
+			font-size: 1rem;
+			font-weight: 800;
+			line-height: 1.4rem;
+			color: #ff8d68;
+			background-color: #feede8;
+			border-radius: 10px;
+
+			&.mob {
+				min-width: 41px;
+			}
+
+			&.desk {
+				min-width: 80px;
+				display: none;
+			}
+		}
+	}
+
+	//Pricing bottom
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		max-width: 170px;
+		padding: 24px 0 32px;
+
+		//Features
+		&-features {
+			margin-bottom: 32px;
+
+			ul li {
+				margin-bottom: 10px;
+
+				img {
+					margin-right: 16px;
+				}
+			}
+
+			ul li:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+@include md {
+	//Pricing
+	.pricing {
+		bottom: 137px;
+
+		//Views, pricing bottom
+		.views,
+		&__bottom {
+			margin: 0 auto;
+		}
+
+		//Views
+		.views {
+			max-width: 444px;
+			padding: 40px 0;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			grid-row-gap: 24px;
+			justify-items: flex-start;
+			align-items: center;
+
+			//Pageviews num
+			&__num {
+				margin-bottom: 0;
+				letter-spacing: 2px;
+			}
+
+			//Slider
+			input {
+				margin-bottom: 0;
+				grid-row: 2;
+				grid-column: 1/-1;
+			}
+
+			//Views pricing
+			&__pricing {
+				justify-self: flex-end;
+				gap: 8px;
+
+				//Price
+				&-price {
+					font-size: 4rem;
+					line-height: 5.5rem;
+					letter-spacing: -1px;
+				}
+
+				//Period
+				&-period {
+					font-size: 1.6rem;
+					line-height: 2.2rem;
+				}
+			}
+		}
+
+		//Billing
+		.billing {
+			max-width: 325px;
+			margin: 0 auto;
+			padding-bottom: 40px;
+
+			//Switch
+			.switch {
+				margin: 0 16px;
+			}
+
+			//Billing yearly
+			&__yearly {
+				margin-right: 9px;
+			}
+
+			//Billing discount
+			&__discount {
+				&.desk {
+					display: block;
+				}
+
+				&.mob {
+					display: none;
+				}
+			}
+		}
+
+		//Pricing bottom
+		&__bottom {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			max-width: 444px;
+			padding: 32px 0;
+
+			//Features
+			&-features {
+				margin-bottom: 0;
+
+				ul {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+				}
+			}
+		}
+	}
+}

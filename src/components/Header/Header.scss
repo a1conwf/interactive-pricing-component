@@ -1,0 +1,77 @@
+@import "../../sass/layout";
+
+//Header
+.header {
+	position: relative;
+	min-height: 400px;
+	background: url("../../assets/svg/bg-pattern.svg") no-repeat center;
+	background-size: cover;
+	border-radius: 0 0 0 191.5px;
+	z-index: 1;
+
+	//Header content
+	&__content {
+		position: relative;
+		padding: 89px 0 64px;
+		text-align: center;
+
+		//Title
+		&-title {
+			margin-bottom: 8px;
+		}
+
+		//Text
+		&-text {
+			max-width: 180px;
+			margin: 0 auto;
+			font-size: 1.3rem;
+			line-height: 2.3rem;
+		}
+
+		//Pattern
+		&-pattern {
+			position: absolute;
+			bottom: 15%;
+			left: 26%;
+		}
+	}
+}
+
+@include sm {
+	//Header content pattern
+	.header__content-pattern {
+		left: 28%;
+	}
+}
+
+@include md {
+	//Header
+	.header {
+		min-height: 449px;
+		background-position: top 0 left 8px;
+
+		//Header content
+		&__content {
+			padding: 104px 0 91px;
+
+			//Title
+			&-title {
+				margin-bottom: 12px;
+			}
+
+			//Text
+			&-text {
+				max-width: 100%;
+				margin: 0;
+				font-size: 1.5rem;
+				line-height: 2rem;
+			}
+
+			//Pattern
+			&-pattern {
+				bottom: 20%;
+				left: 36%;
+			}
+		}
+	}
+}

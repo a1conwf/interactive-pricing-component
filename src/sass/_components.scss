@@ -1,0 +1,15 @@
+//Btn
+.cta__btn {
+	min-width: 170px;
+	height: 4.1rem;
+	padding: 1rem 0;
+	font-weight: 800;
+	color: #becdff;
+	background-color: #293356;
+	border-radius: 2.5rem;
+	transition: color 0.3s ease-out;
+
+	&:hover {
+		color: #fff;
+	}
+}
