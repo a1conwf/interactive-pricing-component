@@ -25,7 +25,7 @@ const Pricing = () => {
 					<div className="pricing__top">
 						<div className="views">
 							<p className="views__num">{pageViews[sliderValue]} pageviews</p>
-							<input className="slider" type="range" name="range" min="0" max="4" value={sliderValue} onInput={(e) => setSliderValue(e.target.value)} style={getSliderBackgroundSize()} />
+							<input className="slider" type="range" name="range" min="0" max="4" value={sliderValue} onChange={(e) => setSliderValue(e.target.value)} style={getSliderBackgroundSize()} />
 							<div className="views__pricing">
 								<span className="views__pricing-price">&#36;{isDiscount ? discountPrice : prices[sliderValue]}.00</span>
 								<span className="views__pricing-period">/ {isDiscount ? "year" : "month"}</span>
